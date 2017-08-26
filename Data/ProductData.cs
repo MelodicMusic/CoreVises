@@ -33,6 +33,8 @@ namespace Data
 
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
 
+                product._id = ObjectId.Parse(objectId);
+
                 collection.ReplaceOne(filter, product.ToBsonDocument());
                 return true;
             }
