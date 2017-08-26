@@ -13,23 +13,29 @@ namespace Business
     {
         private ProductData productData = new ProductData();
 
-        public void Update(string objectId, Product product)
+        public Boolean Update(ObjectId objectId, Product product)
         {
-            productData.Update(objectId, product);
+            return productData.UpdateProduct(objectId, product);
         }
 
-        public void Delete(ObjectId objectId)
+        public Boolean Delete(ObjectId objectId)
         {
-            productData.Delete(objectId);
+            return productData.DeleteProduct(objectId);
         }
         public Product Insert(Product product)
         {
-            return productData.Insert(product);
+            return productData.InsertProduct(product);
 
         }
         public Product Search(String productId)
         {
-            return productData.Search(productId);
+            return productData.SearchProduct(productId);
         }
+
+        public List<Product> GetProducts()
+        {
+            return productData.GetProducts();
+        }
+
     }
 }

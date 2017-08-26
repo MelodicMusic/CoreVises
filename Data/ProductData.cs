@@ -25,22 +25,39 @@ namespace Data
         }
 
 
-        public void Update(string objectId, Product product)
+        public Boolean UpdateProduct(ObjectId objectId, Product product)
         {
-            var collection = database.GetCollection<BsonDocument>("product");
+            try
+            {
+                var collection = database.GetCollection<BsonDocument>("product");
 
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
 
-            collection.ReplaceOne(filter, product.ToBsonDocument());
+                collection.ReplaceOne(filter, product.ToBsonDocument());
+                return true;
+            }
+            catch (MongoException mongoException)
+            {
+                return false;
+            }
+
         }
-        public void Delete(ObjectId objectId)
+        public Boolean DeleteProduct(ObjectId objectId)
         {
-            var collection = database.GetCollection<BsonDocument>("product");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
-            collection.DeleteOne(filter);
+            try
+            {
+                var collection = database.GetCollection<BsonDocument>("product");
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                collection.DeleteOne(filter);
+                return true;
+            }
+            catch (MongoException mongoException)
+            {
+                return false;
+            }
 
         }
-        public Product Insert(Product product)
+        public Product InsertProduct(Product product)
         {
             var collection = database.GetCollection<BsonDocument>("product");
             BsonDocument document = product.ToBsonDocument();
@@ -49,7 +66,7 @@ namespace Data
             return product;
 
         }
-        public Product Search(String productId)
+        public Product SearchProduct(String productId)
         {
             //Se obtiene la colección deseada de la base de datos
             var collection = database.GetCollection<BsonDocument>("product");
@@ -67,6 +84,28 @@ namespace Data
             product.description = result["description"].ToString();
             
             return product;
+        }
+
+        public List<Product> GetProducts()
+        {
+            var collection = database.GetCollection<BsonDocument>("product");
+            List<Product> products = new List<Product>();
+
+            var documents = collection.Find(new BsonDocument()).ToList();
+            foreach (var document in documents)
+            {
+                Product product = new Product();
+                product._id = ObjectId.Parse(document["_id"].ToString());
+                product.name = document["name"].ToString();
+                product.price = float.Parse(document["price"].ToString());
+                product.category = document["category"].ToString();
+                product.brand = document["brand"].ToString();
+                product.description = document["description"].ToString();
+
+                products.Add(product);
+            }
+            
+            return products;
         }
     }
 }
