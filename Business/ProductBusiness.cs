@@ -44,6 +44,10 @@ namespace Business
         {
             return productData.getProductsByCategory(category);
         }
+        public List<Product> getProductsByPrice(float min, float max)
+        {
+            return productData.getProductsByPrice(min, max);
+        }
 
     }
 }
