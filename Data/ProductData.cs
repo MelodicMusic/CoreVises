@@ -25,13 +25,13 @@ namespace Data
         }
 
 
-        public Boolean UpdateProduct(ObjectId objectId, Product product)
+        public Boolean UpdateProduct(string objectId, Product product)
         {
             try
             {
                 var collection = database.GetCollection<BsonDocument>("product");
 
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
 
                 collection.ReplaceOne(filter, product.ToBsonDocument());
                 return true;
@@ -42,12 +42,12 @@ namespace Data
             }
 
         }
-        public Boolean DeleteProduct(ObjectId objectId)
+        public Boolean DeleteProduct(string objectId)
         {
             try
             {
                 var collection = database.GetCollection<BsonDocument>("product");
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
                 collection.DeleteOne(filter);
                 return true;
             }

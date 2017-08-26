@@ -13,12 +13,12 @@ namespace Business
     {
         private ProductData productData = new ProductData();
 
-        public Boolean Update(ObjectId objectId, Product product)
+        public Boolean Update(string objectId, Product product)
         {
             return productData.UpdateProduct(objectId, product);
         }
 
-        public Boolean Delete(ObjectId objectId)
+        public Boolean Delete(string objectId)
         {
             return productData.DeleteProduct(objectId);
         }
