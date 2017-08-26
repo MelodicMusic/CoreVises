@@ -95,7 +95,7 @@ namespace Data
             foreach (var document in documents)
             {
                 Product product = new Product();
-                product._id = ObjectId.Parse(document["_id"].ToString());
+                product._id = document["_id"].AsObjectId;
                 product.name = document["name"].ToString();
                 product.price = float.Parse(document["price"].ToString());
                 product.category = document["category"].ToString();
@@ -105,6 +105,56 @@ namespace Data
                 products.Add(product);
             }
             
+            return products;
+        }
+
+        public List<Product> getProductsByName(string name)
+        {
+            List<Product> products = new List<Product>();
+            var collection = database.GetCollection<BsonDocument>("product");
+
+            
+            var filter = Builders<BsonDocument>.Filter.Regex("name", name);
+            var result = collection.Find(filter).ToList();
+
+            foreach (var item in result)
+            {
+                Product product = new Product();
+                product._id = item["_id"].AsObjectId;
+                product.name = item["name"].ToString();
+                product.price = float.Parse(item["price"].ToString());
+                product.category = item["category"].ToString();
+                product.brand = item["brand"].ToString();
+                product.description = item["description"].ToString();
+
+                products.Add(product);
+            }
+
+            return products;
+        }
+
+        public List<Product> getProductsByCategory(string category)
+        {
+            List<Product> products = new List<Product>();
+            var collection = database.GetCollection<BsonDocument>("product");
+
+            var filter = Builders<BsonDocument>.Filter.Eq("category", category);
+
+            var result = collection.Find(filter).ToList();
+            foreach (var item in result)
+            {
+                Product product = new Product();
+                product._id = item["_id"].AsObjectId;
+                product.name = item["name"].ToString();
+                product.price = float.Parse(item["price"].ToString());
+                product.category = item["category"].ToString();
+                product.brand = item["brand"].ToString();
+                product.description = item["description"].ToString();
+
+                products.Add(product);
+
+            }
+
             return products;
         }
     }
