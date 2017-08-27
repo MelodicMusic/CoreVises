@@ -159,5 +159,31 @@ namespace Data
 
             return products;
         }
+
+        public List<Product> getProductsByPrice(float min, float max)
+        {
+
+            List<Product> products = new List<Product>();
+            var collection = database.GetCollection<BsonDocument>("product");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter =builder.Lt("price", max) & builder.Gt("price", min);
+
+            var result = collection.Find(filter).ToList();
+            foreach (var item in result)
+            {
+                Product product = new Product();
+                product._id = item["_id"].AsObjectId;
+                product.name = item["name"].ToString();
+                product.price = float.Parse(item["price"].ToString());
+                product.category = item["category"].ToString();
+                product.brand = item["brand"].ToString();
+                product.description = item["description"].ToString();
+
+                products.Add(product);
+
+            }
+
+            return products;
+        }
     }
 }
