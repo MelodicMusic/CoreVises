@@ -47,6 +47,16 @@ namespace WebServices.Controllers
             //return value.ToString();
             return this.productBusiness.getProductsByCategory(value);
         }
+      
+        
+        // GET: api/Product/getProductsByPrice/min/max
+        [HttpGet]
+        [Route("api/Product/getProductsByPrice/{min}/{max}")]
+        public List<Product> getProductsByPrice(float min, float max)
+        {
+            return this.productBusiness.getProductsByPrice(min, max);
+        }
+        
 
 
         // POST: api/Product
