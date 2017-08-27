@@ -25,11 +25,11 @@ namespace Data
         }
 
 
-        public void Update(ObjectId objectId, Product product)
+        public void Update(string objectId, Product product)
         {
             var collection = database.GetCollection<BsonDocument>("product");
 
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
 
             collection.ReplaceOne(filter, product.ToBsonDocument());
         }
@@ -59,7 +59,7 @@ namespace Data
             var result = collection.Find(filter).FirstOrDefault();
 
             Product product = new Product();
-            //product._id = result["_id"].AsObjectId;
+            product._id = result["_id"].AsObjectId;
             product.name = result["name"].ToString();
             product.price = float.Parse(result["price"].ToString());
             product.category = result["category"].ToString();
@@ -67,11 +67,6 @@ namespace Data
             product.description = result["description"].ToString();
             
             return product;
-
-            
-
         }
-
-
     }
 }

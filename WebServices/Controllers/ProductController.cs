@@ -20,24 +20,18 @@ namespace WebServices.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Product/5
-        public string Get(int id)
+        // GET: api/Product/id
+        public Product Get(string id)
         {
-            return "value";
+            Product product = new Product();
+            product = this.productBusiness.Search(id);
+
+            return product;
         }
 
         // POST: api/Product
         public Product Post([FromBody]Object value)
         {
-            /*
-            Product p = new Product();
-            p.name = "pnombre";
-            p.price = 123;
-            p.description = "pdesc";
-            p.brand = "pmarca";
-            return Newtonsoft.Json.JsonConvert.SerializeObject(value);
-            */
-
             Product product = new Product();
             product = JsonConvert.DeserializeObject<Product>(value.ToString());
 
@@ -45,8 +39,10 @@ namespace WebServices.Controllers
         }
 
         // PUT: api/Product/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(string id, [FromBody]Object value)
         {
+            Product product = new Product();
+            this.productBusiness.Update("", product);
         }
 
         // DELETE: api/Product/5

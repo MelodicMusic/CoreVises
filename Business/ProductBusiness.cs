@@ -13,7 +13,7 @@ namespace Business
     {
         private ProductData productData = new ProductData();
 
-        public void Update(ObjectId objectId, Product product)
+        public void Update(string objectId, Product product)
         {
             productData.Update(objectId, product);
         }
