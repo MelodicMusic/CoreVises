@@ -24,22 +24,39 @@ namespace Data
             this.database = client.GetDatabase("shop_melodic_music");
         }
 
-        public void Update(ObjectId objectId, Sale sale)
+        public Boolean UpdateSale(string objectId, Sale sale)
         {
-            var collection = database.GetCollection<BsonDocument>("sale");
+            try
+            {
 
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                var collection = database.GetCollection<BsonDocument>("sale");
 
-            collection.ReplaceOne(filter, sale.ToBsonDocument());
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+
+                collection.ReplaceOne(filter, sale.ToBsonDocument());
+                return true;
+            }
+            catch(MongoException ex)
+            {
+                return false;
+            }
         }
-        public void Delete(ObjectId objectId)
+        public Boolean DeleteSale(string objectId)
         {
-            var collection = database.GetCollection<BsonDocument>("sale");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
-            collection.DeleteOne(filter);
+            try
+            {
+                var collection = database.GetCollection<BsonDocument>("sale");
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                collection.DeleteOne(filter);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
 
         }
-        public Sale Insert(Sale sale)
+        public Sale InsertSale(Sale sale)
         {
             var collection = database.GetCollection<BsonDocument>("sale");
             BsonDocument document = sale.ToBsonDocument();
@@ -48,9 +65,9 @@ namespace Data
             return sale;
 
         }
-        public Sale Search(String saleId)
+        public Sale SearchSale(string saleId)
         {
-            //Se obtiene la colección deseada de la base de datos
+
             var collection = database.GetCollection<BsonDocument>("sale");
 
             var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(saleId));
@@ -58,15 +75,34 @@ namespace Data
             var result = collection.Find(filter).FirstOrDefault();
 
             Sale sale = new Sale();
+            sale._id = result["_id"].AsObjectId;
             sale.date = DateTime.Parse(result["date"].ToString());
-            sale.userId = result["userId"].ToString();
-            sale.productId = result["productId"].ToString();
+            sale.user._id = (result["userId"].AsObjectId);
+            sale.product._id = (result["productId"].AsObjectId);
             sale.detail = result["detail"].ToString();
 
             return sale;
 
+        }
+        public List<Sale> GetSales()
+        {
+            var collection = database.GetCollection<BsonDocument>("sale");
+            List<Sale> sales = new List<Sale>();
 
+            var documents = collection.Find(new BsonDocument()).ToList();
+            foreach (var document in documents)
+            {
+                Sale sale = new Sale();
+                sale._id = document["_id"].AsObjectId;
+                sale.date = DateTime.Parse(document["date"].ToString());
+                sale.user._id = (document["userId"].AsObjectId);
+                sale.product._id = (document["productId"].AsObjectId);
+                sale.detail = document["detail"].ToString();
 
+                sales.Add(sale);
+            }
+
+            return sales;
         }
     }
 }

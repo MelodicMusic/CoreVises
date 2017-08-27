@@ -13,8 +13,9 @@ namespace Domain
         [BsonId]
         public ObjectId _id { get; set; }
         public DateTime date { get; set; }
-        public string userId { get; set; }
-        public string productId { get; set; }
+        public User user { get; set; }
+        public Product product { get; set; }
         public string detail { get; set; }
+
     }
 }

@@ -73,3 +73,97 @@ C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Data.
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\obj\Debug\WebServices.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\obj\Debug\WebServices.dll
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\obj\Debug\WebServices.pdb
+<<<<<<< HEAD
+=======
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Web.Cors.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Web.Http.Cors.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Web.Http.Cors.xml
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Business.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Domain.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Data.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Bson.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.Core.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Business.pdb
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Domain.pdb
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Data.pdb
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Bson.xml
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.xml
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.Core.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\ApplicationInsights.config
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\csc.exe
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\vbc.exe
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\VBCSCompiler.exe
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\WebServices.dll.config
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\WebServices.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\WebServices.pdb
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Antlr3.Runtime.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Business.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Domain.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.Web.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\MongoDB.Bson.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\MongoDB.Driver.Core.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\MongoDB.Driver.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Newtonsoft.Json.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Net.Http.Formatting.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Cors.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Helpers.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Http.Cors.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Http.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Http.WebHost.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Mvc.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Optimization.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Razor.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.WebPages.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.WebPages.Razor.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\WebGrease.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Data.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Business.pdb
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Domain.pdb
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.Web.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\MongoDB.Bson.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\MongoDB.Driver.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\MongoDB.Driver.Core.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Http.Cors.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Newtonsoft.Json.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Net.Http.Formatting.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Helpers.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Http.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Http.WebHost.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Mvc.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Optimization.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.Razor.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.WebPages.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\System.Web.WebPages.Razor.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Antlr3.Runtime.pdb
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\Data.pdb
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\obj\Debug\WebServices.csprojResolveAssemblyReference.cache
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\obj\Debug\WebServices.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\obj\Debug\WebServices.pdb
+>>>>>>> 01bd82191e41b91daf5c5fe93a1ed590e13ebb42

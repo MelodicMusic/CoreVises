@@ -24,22 +24,39 @@ namespace Data
             this.database = client.GetDatabase("shop_melodic_music");
         }
 
-        public void Update(ObjectId objectId, User user)
+        public Boolean UpdateUser(string objectId, User user)
         {
-            var collection = database.GetCollection<BsonDocument>("user");
+            try
+            {
 
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                var collection = database.GetCollection<BsonDocument>("user");
 
-            collection.ReplaceOne(filter, user.ToBsonDocument());
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+
+                collection.ReplaceOne(filter, user.ToBsonDocument());
+                return true;
+            }
+            catch (MongoException ex)
+            {
+                return false;
+            }
         }
-        public void Delete(ObjectId objectId)
+        public Boolean DeleteUser(string objectId)
         {
-            var collection = database.GetCollection<BsonDocument>("user");
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
-            collection.DeleteOne(filter);
+            try
+            {
+                var collection = database.GetCollection<BsonDocument>("user");
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                collection.DeleteOne(filter);
+                return true;
+            }
+            catch (MongoException ex)
+            {
+                return false;
+            }
 
         }
-        public User Insert(User user)
+        public User SignIn(User user)
         {
             var collection = database.GetCollection<BsonDocument>("user");
             BsonDocument document = user.ToBsonDocument();
@@ -48,24 +65,72 @@ namespace Data
             return user;
 
         }
-        public User Search(String saleId)
+        public User SearchUser(string userId)
         {
-            //Se obtiene la colección deseada de la base de datos
+
             var collection = database.GetCollection<BsonDocument>("user");
 
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(saleId));
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(userId));
 
             var result = collection.Find(filter).FirstOrDefault();
 
             User user = new User();
+            user._id = result["_id"].AsObjectId;
             user.name = result["name"].ToString();
             user.lastName = result["lastName"].ToString();
-            user.email = result["category"].ToString();
-            user.password = result["brand"].ToString();
-            user.role = result["description"].ToString();
+            user.email = result["email"].ToString();
+            user.password = result["password"].ToString();
+            user.role = result["role"].ToString();
 
             return user;
-            
+
+        }
+
+        public User LogIn(string email, string password)
+        {
+            var collection = database.GetCollection<BsonDocument>("user");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("email", email) & builder.Eq("password", password);
+
+            var result = collection.Find(filter).FirstOrDefault();
+            if (result != null)
+            {
+                User user = new User();
+                user.name = result["name"].ToString();
+                user.lastName = result["lastName"].ToString();
+                user.email = result["email"].ToString();
+                user.password = result["password"].ToString();
+                user.role = result["role"].ToString();
+
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
+        public List<User> GetUsers()
+        {
+            var collection = database.GetCollection<BsonDocument>("user");
+            List<User> users = new List<User>();
+
+            var documents = collection.Find(new BsonDocument()).ToList();
+            foreach (var document in documents)
+            {
+                User user = new User();
+                user._id = document["_id"].AsObjectId;
+                user.name = document["name"].ToString();
+                user.lastName = document["lastName"].ToString();
+                user.email = document["email"].ToString();
+                user.password = document["password"].ToString();
+                user.role = document["role"].ToString();
+
+                users.Add(user);
+            }
+
+            return users;
         }
     }
 }
