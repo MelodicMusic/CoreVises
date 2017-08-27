@@ -28,6 +28,26 @@ namespace WebServices.Controllers
 
             return product;
         }
+        
+
+        // GET: api/Product/getProductsByName/value
+        [HttpGet]
+        [Route("api/Product/getProductsByName/{value}")]
+        public List<Product> getProductsByName(string value)
+        {
+            return this.productBusiness.getProductsByName(value);
+        }
+
+
+        // GET: api/Product/getProductsByCategory/value
+        [HttpGet]
+        [Route("api/Product/getProductsByCategory/{value}")]
+        public List<Product> getProductsByCategory(string value)
+        {
+            //return value.ToString();
+            return this.productBusiness.getProductsByCategory(value);
+        }
+
 
         // POST: api/Product
         public Product Post([FromBody]Object value)
@@ -38,7 +58,7 @@ namespace WebServices.Controllers
             return this.productBusiness.Insert(product);
         }
 
-        // PUT: api/Product/5
+        // PUT: api/Product/value
         public Boolean Put(string id, [FromBody]Object value)
         {
             Product product = new Product();
@@ -47,7 +67,7 @@ namespace WebServices.Controllers
             return this.productBusiness.Update(id, product); ;
         }
 
-        // DELETE: api/Product/5
+        // DELETE: api/Product/value
         public Boolean Delete(string id)
         {
             return this.productBusiness.Delete(id);
