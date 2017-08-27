@@ -15,9 +15,9 @@ namespace WebServices.Controllers
         ProductBusiness productBusiness = new ProductBusiness();
 
         // GET: api/Product
-        public IEnumerable<string> Get()
+        public List<Product> Get()
         {
-            return new string[] { "value1", "value2" };
+            return this.productBusiness.GetProducts();
         }
 
         // GET: api/Product/id
