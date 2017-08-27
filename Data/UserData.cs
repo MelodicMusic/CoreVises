@@ -31,7 +31,7 @@ namespace Data
 
                 var collection = database.GetCollection<BsonDocument>("user");
 
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
 
                 collection.ReplaceOne(filter, user.ToBsonDocument());
                 return true;
@@ -46,7 +46,7 @@ namespace Data
             try
             {
                 var collection = database.GetCollection<BsonDocument>("user");
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
                 collection.DeleteOne(filter);
                 return true;
             }

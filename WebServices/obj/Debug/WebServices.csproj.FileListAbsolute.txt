@@ -75,22 +75,6 @@ C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\obj\Debug
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\obj\Debug\WebServices.pdb
 <<<<<<< HEAD
 =======
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Web.Cors.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Web.Http.Cors.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Web.Http.Cors.xml
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Business.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Domain.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Data.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Bson.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.Core.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Business.pdb
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Domain.pdb
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\Data.pdb
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Bson.xml
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.xml
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\WebServices\bin\MongoDB.Driver.Core.xml
 C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\ApplicationInsights.config
 C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\csc.exe
 C:\Users\Extreme  PC\Documents\GitHub\CoreVises\WebServices\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
