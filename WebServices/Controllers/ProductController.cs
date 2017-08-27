@@ -39,15 +39,18 @@ namespace WebServices.Controllers
         }
 
         // PUT: api/Product/5
-        public void Put(string id, [FromBody]Object value)
+        public Boolean Put(string id, [FromBody]Object value)
         {
             Product product = new Product();
-            this.productBusiness.Update("", product);
+            product = JsonConvert.DeserializeObject<Product>(value.ToString());
+
+            return this.productBusiness.Update(id, product); ;
         }
 
         // DELETE: api/Product/5
-        public void Delete(int id)
+        public Boolean Delete(string id)
         {
+            return this.productBusiness.Delete(id);
         }
     }
 }
