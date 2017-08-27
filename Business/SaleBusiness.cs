@@ -13,23 +13,28 @@ namespace Business
     {
         private SaleData saleData = new SaleData();
 
-        public void Update(ObjectId objectId, Sale sale)
+        public Boolean Update(string objectId, Sale sale)
         {
-            saleData.Update(objectId, sale);
+            return saleData.UpdateSale(objectId, sale);
         }
 
-        public void Delete(ObjectId objectId)
+        public Boolean Delete(string objectId)
         {
-            saleData.Delete(objectId);
+            return saleData.DeleteSale(objectId);
         }
         public Sale Insert(Sale sale)
         {
-            return saleData.Insert(sale);
+            return saleData.InsertSale(sale);
 
         }
         public Sale Search(String saleId)
         {
-            return saleData.Search(saleId);
+            return saleData.SearchSale(saleId);
+        }
+
+        public List<Sale> GetSales()
+        {
+            return saleData.GetSales();
         }
     }
 }

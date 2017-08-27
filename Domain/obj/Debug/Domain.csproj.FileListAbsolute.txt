@@ -25,3 +25,17 @@ C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Drive
 C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\obj\Debug\Domain.dll
 C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\obj\Debug\Domain.pdb
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\Domain.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\Domain.pdb
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Bson.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Bson.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.dll
+C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.pdb

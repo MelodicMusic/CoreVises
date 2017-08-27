@@ -13,23 +13,32 @@ namespace Business
     {
         private UserData userData = new UserData();
 
-        public void Update(ObjectId objectId, User user)
+        public void UpdateUser(string objectId, User user)
         {
-            userData.Update(objectId, user);
+            userData.UpdateUser(objectId, user);
         }
 
-        public void Delete(ObjectId objectId)
+        public void DeleteUser(string objectId)
         {
-            userData.Delete(objectId);
+            userData.DeleteUser(objectId);
         }
-        public User Insert(User user)
+        public User SignIn(User user)
         {
-            return userData.Insert(user);
+            return userData.SignIn(user);
 
         }
-        public User Search(String userId)
+        public User SearchUser(string userId)
         {
-            return userData.Search(userId);
+            return userData.SearchUser(userId);
+        }
+
+        public User LogIn(string email, string password)
+        {
+            return userData.LogIn(email, password);
+        }
+        public List<User> GetUsers()
+        {
+            return userData.GetUsers();
         }
     }
 }
