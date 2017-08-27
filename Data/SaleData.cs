@@ -77,8 +77,8 @@ namespace Data
             Sale sale = new Sale();
             sale._id = result["_id"].AsObjectId;
             sale.date = DateTime.Parse(result["date"].ToString());
-            sale.user._id = (result["userId"].AsObjectId);
-            sale.product._id = (result["productId"].AsObjectId);
+            sale.userId = result["userId"].ToString();
+            sale.productId = result["productId"].ToString();
             sale.detail = result["detail"].ToString();
 
             return sale;
@@ -95,8 +95,8 @@ namespace Data
                 Sale sale = new Sale();
                 sale._id = document["_id"].AsObjectId;
                 sale.date = DateTime.Parse(document["date"].ToString());
-                sale.user._id = (document["userId"].AsObjectId);
-                sale.product._id = (document["productId"].AsObjectId);
+                sale.userId = document["userId"].ToString();
+                sale.productId = document["productId"].ToString();
                 sale.detail = document["detail"].ToString();
 
                 sales.Add(sale);
