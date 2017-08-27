@@ -36,7 +36,7 @@ namespace Data
                 collection.ReplaceOne(filter, sale.ToBsonDocument());
                 return true;
             }
-            catch(MongoException ex)
+            catch(MongoException)
             {
                 return false;
             }

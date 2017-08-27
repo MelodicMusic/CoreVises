@@ -74,7 +74,7 @@ namespace WebServices.Controllers
             Product product = new Product();
             product = JsonConvert.DeserializeObject<Product>(value.ToString());
 
-            return this.productBusiness.Update(id, product); ;
+            return this.productBusiness.Update(id, product);
         }
 
         // DELETE: api/Product/value

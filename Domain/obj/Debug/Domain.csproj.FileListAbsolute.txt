@@ -1,18 +1,3 @@
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\Domain.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\Domain.pdb
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Bson.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Driver.Core.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Driver.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Driver.Legacy.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Bson.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Driver.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Driver.Core.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\bin\Debug\MongoDB.Driver.Legacy.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\obj\Debug\Domain.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Domain\obj\Debug\Domain.pdb
-<<<<<<< HEAD
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\Domain.dll
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\Domain.pdb
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\MongoDB.Bson.dll
@@ -24,22 +9,5 @@ C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\Mong
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\MongoDB.Driver.xml
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\MongoDB.Driver.Core.xml
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\MongoDB.Driver.Legacy.xml
-C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.dll
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.pdb
-=======
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\Domain.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\Domain.pdb
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Bson.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Core.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Legacy.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Bson.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Core.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Legacy.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.pdb
->>>>>>> 01bd82191e41b91daf5c5fe93a1ed590e13ebb42

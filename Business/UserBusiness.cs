@@ -9,22 +9,22 @@ using System.Threading.Tasks;
 
 namespace Business
 {
-    class UserBusiness
+    public class UserBusiness
     {
         private UserData userData = new UserData();
 
-        public void UpdateUser(string objectId, User user)
+        public Boolean UpdateUser(string objectId, User user)
         {
-            userData.UpdateUser(objectId, user);
+            return userData.UpdateUser(objectId, user);
         }
 
         public void DeleteUser(string objectId)
         {
             userData.DeleteUser(objectId);
         }
-        public User SignIn(User user)
+        public User SignUp(User user)
         {
-            return userData.SignIn(user);
+            return userData.SignUp(user);
 
         }
         public User SearchUser(string userId)

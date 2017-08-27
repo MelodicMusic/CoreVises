@@ -33,10 +33,12 @@ namespace Data
 
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
 
+                user._id = ObjectId.Parse(objectId);
+
                 collection.ReplaceOne(filter, user.ToBsonDocument());
                 return true;
             }
-            catch (MongoException ex)
+            catch (MongoException)
             {
                 return false;
             }
@@ -50,13 +52,13 @@ namespace Data
                 collection.DeleteOne(filter);
                 return true;
             }
-            catch (MongoException ex)
+            catch (MongoException)
             {
                 return false;
             }
 
         }
-        public User SignIn(User user)
+        public User SignUp(User user)
         {
             var collection = database.GetCollection<BsonDocument>("user");
             BsonDocument document = user.ToBsonDocument();
@@ -96,6 +98,7 @@ namespace Data
             if (result != null)
             {
                 User user = new User();
+                user._id = result["_id"].AsObjectId;
                 user.name = result["name"].ToString();
                 user.lastName = result["lastName"].ToString();
                 user.email = result["email"].ToString();

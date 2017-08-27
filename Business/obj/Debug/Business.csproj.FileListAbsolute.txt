@@ -1,22 +1,3 @@
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\Business.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\Business.pdb
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\Data.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\Domain.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Bson.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Driver.Core.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Driver.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Driver.Legacy.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\Data.pdb
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\Domain.pdb
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Bson.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Driver.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Driver.Core.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\bin\Debug\MongoDB.Driver.Legacy.xml
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\obj\Debug\Business.dll
-C:\Users\Extreme  PC\Documents\GitHub\WebServices\Business\obj\Debug\Business.pdb
-<<<<<<< HEAD
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Business\bin\Debug\Business.dll
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Business\bin\Debug\Business.pdb
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Business\bin\Debug\Data.dll
@@ -35,23 +16,3 @@ C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Business\bin\Debug\Mo
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Business\obj\Debug\Business.dll
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Business\obj\Debug\Business.pdb
-=======
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\Business.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\Business.pdb
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\Data.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\Domain.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Bson.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Driver.Core.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Driver.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Driver.Legacy.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\Data.pdb
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\Domain.pdb
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Bson.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Driver.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Driver.Core.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\bin\Debug\MongoDB.Driver.Legacy.xml
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\obj\Debug\Business.dll
-C:\Users\Extreme  PC\Documents\GitHub\CoreVises\Business\obj\Debug\Business.pdb
->>>>>>> 01bd82191e41b91daf5c5fe93a1ed590e13ebb42

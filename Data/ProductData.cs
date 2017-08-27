@@ -38,7 +38,7 @@ namespace Data
                 collection.ReplaceOne(filter, product.ToBsonDocument());
                 return true;
             }
-            catch (MongoException mongoException)
+            catch (MongoException)
             {
                 return false;
             }
@@ -53,7 +53,7 @@ namespace Data
                 collection.DeleteOne(filter);
                 return true;
             }
-            catch (MongoException mongoException)
+            catch (MongoException)
             {
                 return false;
             }
