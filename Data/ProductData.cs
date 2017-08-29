@@ -68,9 +68,9 @@ namespace Data
             return product;
 
         }
-        public Product SearchProduct(String productId)
+        public Product GetProductById(String productId)
         {
-            //Se obtiene la colección deseada de la base de datos
+
             var collection = database.GetCollection<BsonDocument>("product");
 
             var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(productId));
@@ -84,7 +84,7 @@ namespace Data
             product.category = result["category"].ToString();
             product.brand = result["brand"].ToString();
             product.description = result["description"].ToString();
-
+            product.imageUrl = result["url"].ToString();
             return product;
         }
 
@@ -103,7 +103,7 @@ namespace Data
                 product.category = document["category"].ToString();
                 product.brand = document["brand"].ToString();
                 product.description = document["description"].ToString();
-
+                product.imageUrl = document["url"].ToString();
                 products.Add(product);
             }
 
@@ -129,7 +129,7 @@ namespace Data
                     product.category = item["category"].ToString();
                     product.brand = item["brand"].ToString();
                     product.description = item["description"].ToString();
-
+                    product.imageUrl = item["url"].ToString();
                     products.Add(product);
                 }
 
@@ -160,7 +160,7 @@ namespace Data
                     product.category = item["category"].ToString();
                     product.brand = item["brand"].ToString();
                     product.description = item["description"].ToString();
-
+                    product.imageUrl = item["url"].ToString();
                     products.Add(product);
 
                 }
@@ -194,7 +194,7 @@ namespace Data
                     product.category = item["category"].ToString();
                     product.brand = item["brand"].ToString();
                     product.description = item["description"].ToString();
-
+                    product.imageUrl = item["url"].ToString();
                     products.Add(product);
 
                 }

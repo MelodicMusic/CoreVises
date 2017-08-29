@@ -27,9 +27,9 @@ namespace Business
             return productData.InsertProduct(product);
 
         }
-        public Product Search(String productId)
+        public Product GetProductById(String productId)
         {
-            return productData.SearchProduct(productId);
+            return productData.GetProductById(productId);
         }
 
         public List<Product> GetProducts()
