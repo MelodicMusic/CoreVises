@@ -24,7 +24,7 @@ namespace WebServices.Controllers
         public Product Get(string id)
         {
             Product product = new Product();
-            product = this.productBusiness.Search(id);
+            product = this.productBusiness.GetProductById(id);
 
             return product;
         }
