@@ -6,12 +6,20 @@ using System.Web.Mvc;
 
 namespace WebServices.Controllers
 {
+    
     public class MMProductController : Controller
     {
         // GET: MMProduct
         public ActionResult Insert()
         {
             ViewBag.Title = "Insertar Producto";
+            return View();
+        }
+
+        // GET: roduct
+        public ActionResult Delete()
+        {
+            ViewBag.Title = "Borrar Producto";
             return View();
         }
     }

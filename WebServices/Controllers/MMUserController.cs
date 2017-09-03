@@ -13,5 +13,17 @@ namespace WebServices.Controllers
         {
             return View();
         }
+
+        // GET: MMUser
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // GET: MMUser
+        public ActionResult Reports()
+        {
+            return View();
+        }
     }
 }

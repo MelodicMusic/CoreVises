@@ -25,12 +25,49 @@ namespace WebServices
              );
 
             routes.MapRoute(
+                name: "DeleteProduct",
+                url: "delete_product",
+                defaults: new
+                {
+                    controller = "MMProduct",
+                    action = "Delete"
+                }
+             );
+
+
+
+
+
+
+
+
+            routes.MapRoute(
                 name: "UpdateUser",
                 url: "update_user",
                 defaults: new
                 {
                     controller = "MMUser",
                     action = "Update"
+                }
+             );
+
+            routes.MapRoute(
+                name: "CreateUser",
+                url: "create_user",
+                defaults: new
+                {
+                    controller = "MMUser",
+                    action = "Create"
+                }
+             );
+
+            routes.MapRoute(
+                name: "ClientsReport",
+                url: "report_user",
+                defaults: new
+                {
+                    controller = "MMUser",
+                    action = "Reports"
                 }
              );
 

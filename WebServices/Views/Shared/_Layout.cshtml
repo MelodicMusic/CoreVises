@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <!--<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,13 +24,39 @@
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
                 </ul>
             </div>
+
+
         </div>
     </div>
-    <div class="container body-content">
+        -->
+
+    <header>
+        <h2 class="logo"><a class="hoverEnlace" href="index.html"><img src="Img/logo.png" alt="logo" /></a></h2>
+        <nav>
+            <li><a class="hoverL" href="products.html">Products</a></li>
+            <li><a class="hoverL" href="users.html">Users</a></li>
+            <li><a class="hoverL" href="reports.html">Reports</a></li>
+            <li><a class="hoverL" href="login.html">Log out</a></li>
+
+
+        </nav>
+    </header>
+
+    <div>
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+
+            <ul>
+
+                <li><a class="hoverL" href="https://www.facebook.com"><i class="fa fa-facebook-square"></i></a></li>
+                <p>CoreVises Repository</p>
+                <li><a class="hoverL" href="https://github.com/MelodicMusic/CoreVises"> <i class="fa fa-github-square" "></i></a></li>
+                <p>Web Page Repository</p>
+                <li><a class="hoverL" href="https://github.com/MelodicMusic/WebApp"><i class="fa fa-github-square" "></i></a></li>
+            </ul>
+            <p>Universidad de Costa Rica<br>Sede del Atl&aacute;ntico<br> Recinto de Para&iacute;so</p>
+            <p>Proyecto 1 Informatica Aplicada a los Negocios</p>
         </footer>
     </div>
 

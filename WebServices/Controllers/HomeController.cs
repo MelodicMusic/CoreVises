@@ -13,17 +13,10 @@ namespace WebServices.Controllers
        
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Melodic Music";
 
             return View();
         }
 
-       
-        public ActionResult Contact()
-        {
-            ViewBag.Title = "Product Page";
-
-            return View();
-        }
     }
 }
