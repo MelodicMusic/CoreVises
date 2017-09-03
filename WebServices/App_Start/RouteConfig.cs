@@ -13,11 +13,34 @@ namespace WebServices
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+                name: "InsertProduct",
+                url: "insert_product",
+                defaults: new
+                {
+                    controller = "MMProduct",
+                    action = "Insert"
+                }
+             );
+
+            routes.MapRoute(
+                name: "UpdateUser",
+                url: "update_user",
+                defaults: new
+                {
+                    controller = "MMUser",
+                    action = "Update"
+                }
+             );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            
         }
     }
 }

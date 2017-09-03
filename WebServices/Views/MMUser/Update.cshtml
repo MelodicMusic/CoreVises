@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    @Styles.Render("~/Content/mainstyles.css");
+    @Styles.Render("~/Content/products.css");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="welcome">
+    <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
+    <h1>Update an User</h1>
+
+
+    <div class="main-content">
+
+
+        <form class="form-basic" method="post" action="#">
+
+
+            <div class="form-row">
+                <label>
+                    <span>Select an user to update below</span>
+                    <select name="dropdown">
+
+                        @{ 
+                            Business.UserBusiness users = new Business.UserBusiness();
+
+                            for (int i = 0; i < users.GetUsers().ToArray().Length; i++)
+                            {
+                                <option value="asd">@{ users.GetUsers().ToArray()[i].name.ToString(); }</option>
+                            }
+                        }
+
+                    </select>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <button type="submit">Update</button>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="brand">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>LastName</span>
+                    <input type="text" name="price">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Confirm Password</span>
+                    <input type="password" name="password">
+                </label>
+            </div>
+
+
+
+            <div class="form-row">
+                <label>
+                    <span>Role</span>
+                    <select name="dropdown">
+                        <option>Admin</option>
+                        <option>User</option>
+
+                    </select>
+                </label>
+            </div>
+
+
+            <div class="form-row">
+                <button type="submit">Save changes</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</section>
