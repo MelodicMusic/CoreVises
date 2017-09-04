@@ -83,6 +83,7 @@ namespace Data
             user.email = result["email"].ToString();
             user.password = result["password"].ToString();
             user.role = result["role"].ToString();
+            user.cardNumber = result["cardNumber"].ToString();
 
             return user;
 
@@ -104,7 +105,33 @@ namespace Data
                 user.email = result["email"].ToString();
                 user.password = result["password"].ToString();
                 user.role = result["role"].ToString();
+                user.cardNumber = result["cardNumber"].ToString();
+                return user;
+            }
+            else
+            {
+                return null;
+            }
 
+        }
+
+        public User LogInAsAdmin(string email, string password)
+        {
+            var collection = database.GetCollection<BsonDocument>("user");
+            var builder = Builders<BsonDocument>.Filter;
+            var filter = builder.Eq("email", email) & builder.Eq("password", password);
+
+            var result = collection.Find(filter).FirstOrDefault();
+            if (result != null && result["role"].ToString() == "admin")
+            {
+                User user = new User();
+                user._id = result["_id"].AsObjectId;
+                user.name = result["name"].ToString();
+                user.lastName = result["lastName"].ToString();
+                user.email = result["email"].ToString();
+                user.password = result["password"].ToString();
+                user.role = result["role"].ToString();
+                user.cardNumber = result["cardNumber"].ToString();
                 return user;
             }
             else
@@ -129,7 +156,7 @@ namespace Data
                 user.email = document["email"].ToString();
                 user.password = document["password"].ToString();
                 user.role = document["role"].ToString();
-
+                user.cardNumber = document["cardNumber"].ToString();
                 users.Add(user);
             }
 

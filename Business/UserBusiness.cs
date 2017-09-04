@@ -40,5 +40,10 @@ namespace Business
         {
             return userData.GetUsers();
         }
+
+        public User LogInAsAdmin(string email, string password)
+        {
+            return userData.LogInAsAdmin(email, password);
+        }
     }
 }
