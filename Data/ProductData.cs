@@ -63,7 +63,10 @@ namespace Data
         {
             var collection = database.GetCollection<BsonDocument>("product");
             BsonDocument document = product.ToBsonDocument();
-            collection.InsertOne(document);
+
+        
+                collection.InsertOne(document);
+          
             product._id = document["_id"].AsObjectId;
             return product;
 

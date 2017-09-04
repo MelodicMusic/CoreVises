@@ -6,6 +6,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+@{
+
+    Business.ProductBusiness pb = new Business.ProductBusiness();
+
+    if (IsPost)
+    {
+        string name = Request.Form["name"];
+        float price = Request.Form["price"].AsFloat();
+        string category = Request.Form["category"];
+        string brand = Request.Form["brand"];
+        string description = Request.Form["description"];
+        string imageUrl = Request.Form["imageUrl"];
+
+        Domain.Product p = new Domain.Product();
+        p.brand = brand;
+        p.name = name;
+        p.category = category;
+        p.description = description;
+        p.imageUrl = imageUrl;
+        p.price = price;
+
+        p = pb.Insert(p);
+
+        if (!p.Equals(null))
+        {
+
+    
+            <script type="text/javascript">
+         alert("You have inserted the product successfully");
+            </script>
+        }
+
+    }
+}
+
+
 <section class="welcome">
     <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
     <h1>Insert a Product</h1>
@@ -19,19 +56,19 @@
             <div class="form-row">
                 <label>
                     <span>Brand</span>
-                    <input type="text" name="brand">
+                    <input type="text" name="brand" required>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Price</span>
-                    <input type="text" name="price">
+                    <input type="text" name="price" required>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Name</span>
-                    <input type="text" name="name">
+                    <input type="text" name="name" required>
                 </label>
             </div>
 
@@ -39,7 +76,7 @@
             <div class="form-row">
                 <label>
                     <span>Category</span>
-                    <select name="dropdown">
+                    <select name="category">
                         <option>Viento</option>
                         <option>Cuerda</option>
                         <option>Percusion</option>
@@ -49,18 +86,40 @@
             </div>
             <div class="form-row">
                 <label>
-                    <span>Description</span>
-                    <textarea name="textarea"></textarea>
+                    <span>url</span>
+                    <input type="text" name="name" required>
                 </label>
             </div>
 
             <div class="form-row">
-                <button type="submit">Insert</button>
+                <label>
+                    <span>Description</span>
+                    <textarea name="description" required></textarea>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <button type="submit"  >Insert</button>
             </div>
 
         </form>
 
     </div>
+
+
+
+    <div id="modal" class="modal">
+        <div id="modal-body" class="modal-body">
+
+            <div>You've inserted the product sucessfully </div>
+
+            <div class="row">
+                <button  type="button" onclick="closeModal()">Cerrar</button>
+            </div>
+
+        </div>
+    </div>
+
 
 
 </section>
