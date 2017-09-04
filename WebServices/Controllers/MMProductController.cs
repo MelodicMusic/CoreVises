@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebServices.Controllers
 {
-    
+
     public class MMProductController : Controller
     {
         // GET: MMProduct
@@ -22,5 +22,24 @@ namespace WebServices.Controllers
             ViewBag.Title = "Borrar Producto";
             return View();
         }
+
+        public ActionResult Update()
+        {
+            ViewBag.Title = "Actualizar Producto";
+            return View();
+        }
+
+        public ActionResult Products()
+        {
+            ViewBag.Title = "Products";
+            return View();
+        }
+
+        public ActionResult Retrieve()
+        {
+            ViewBag.Title = "Buscar Productos";
+            return View();
+        }
+
     }
 }
