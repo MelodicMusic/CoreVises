@@ -7,6 +7,7 @@ using System.Web.Http;
 using Business;
 using Domain;
 using Newtonsoft.Json;
+using WebServices.Security;
 
 namespace WebServices.Controllers
 {
@@ -14,6 +15,7 @@ namespace WebServices.Controllers
     {
 
         SaleBusiness saleBusiness = new SaleBusiness();
+        DES des = new DES();
 
         // GET: api/Sale
         public List<Sale> Get()
@@ -25,7 +27,9 @@ namespace WebServices.Controllers
         public Sale Post([FromBody]Object value)
         {
             Sale sale = new Sale();
-            sale = JsonConvert.DeserializeObject<Sale>(value.ToString());
+            
+            string jsonString = des.Decrypt(value.ToString());
+            sale = JsonConvert.DeserializeObject<Sale>(jsonString);
 
             return this.saleBusiness.Insert(sale);
         }
