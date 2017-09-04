@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServices", "WebServices\WebServices.csproj", "{8336CEEE-8FBC-47FC-90BD-21A79B620F2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAPService", "SOAPService\SOAPService.csproj", "{53A0A4F8-E754-4BBC-AD3B-D9AB9892E5EF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,10 +34,6 @@ Global
 		{8336CEEE-8FBC-47FC-90BD-21A79B620F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8336CEEE-8FBC-47FC-90BD-21A79B620F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8336CEEE-8FBC-47FC-90BD-21A79B620F2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53A0A4F8-E754-4BBC-AD3B-D9AB9892E5EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53A0A4F8-E754-4BBC-AD3B-D9AB9892E5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53A0A4F8-E754-4BBC-AD3B-D9AB9892E5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53A0A4F8-E754-4BBC-AD3B-D9AB9892E5EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

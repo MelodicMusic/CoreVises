@@ -32,11 +32,11 @@ namespace WebServices.Controllers
         // GET: api/User/LogIn/email/password
         [HttpGet]
         [Route("api/User/LogIn/{email}/{password}")]
-        public User LogIn(string cryptedEmail, string cryptedPassword)
+        public User LogIn(string email, string password)
         {
-            string email = des.Decrypt(cryptedEmail);
-            string password = des.Decrypt(cryptedPassword);
-            return this.userBusiness.LogIn(email, cryptedPassword);
+            string email_ = des.Decrypt(email);
+            string password_ = des.Decrypt(password);
+            return this.userBusiness.LogIn(email_, password_);
         }
 
 
