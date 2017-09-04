@@ -15,14 +15,14 @@ namespace WebServices.Controllers
     {
 
         UserBusiness userBusiness = new UserBusiness();
-        DES des = new DES();
+        //DES des = new DES();
 
         // POST: api/User
         public User Post([FromBody]Object value)
         {
             User user = new Domain.User();
 
-            string jsonString = des.Decrypt(value.ToString());
+            //string jsonString = des.Decrypt(value.ToString());
             user = JsonConvert.DeserializeObject<User>(value.ToString());
 
             return this.userBusiness.SignUp(user);
@@ -32,23 +32,23 @@ namespace WebServices.Controllers
         // GET: api/User/LogIn/email/password
         [HttpGet]
         [Route("api/User/LogIn/{email}/{password}")]
-        public User LogIn(string cryptedEmail, string cryptedPassword)
+        public User LogIn(string email, string password)
         {
-            string email = des.Decrypt(cryptedEmail);
-            string password = des.Decrypt(cryptedPassword);
-            return this.userBusiness.LogIn(email, cryptedPassword);
+           // string email = des.Decrypt(cryptedEmail);
+            //string password = des.Decrypt(cryptedPassword);
+            return this.userBusiness.LogIn(email, password);
         }
 
 
         // PUT: api/User/value
-        public Boolean Put(string cryptedId, [FromBody]Object value)
+        public Boolean Put(string id, [FromBody]Object value)
         {
             User user = new User();
-            string id = des.Decrypt(cryptedId);
-            string JsonValue = des.Decrypt(value.ToString());
-            user = JsonConvert.DeserializeObject<User>(JsonValue);
+           // string id = des.Decrypt(cryptedId);
+            //string JsonValue = des.Decrypt(value.ToString());
+            user = JsonConvert.DeserializeObject<User>(value.ToString());
 
-            return this.userBusiness.UpdateUser(cryptedId, user);
+            return this.userBusiness.UpdateUser(id, user);
         }
 
     }
