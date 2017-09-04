@@ -1,69 +1,38 @@
 ﻿
 @{
-    ViewBag.Title = "Reporte de Clientes";
+    ViewBag.Title = "Update";
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/products.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
+
 <section class="welcome">
     <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
-    <h1>Client Report</h1>
-
-
-    <div class="main-content">
-
-
-        <form class="form-basic" method="post" action="#">
-
-
-            <div class="form-row">
-                <label>
-                    <span>Insert the Client bellow</span>
-                    <input type="text" name="brand">
-
-                </label>
-            </div>
-
-            <div class="form-row">
-                <button type="submit">Generate Report</button>
-            </div>
-
-
-            <div class="form-row">
-
-
-                <table style="width:100%">
-                    <tr>
-                        <th>Date</th>
-                        <th>Client</th>
-                        <th>Product</th>
-                        <th>Detail</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                </table>
-            </div>
-
-
-            <button type="submit">Export PDF</button>
-
-
-            <li>
-
-                <i class="fa fa-file-pdf-o" "></i>
-            </li>
-
-
-        </form>
-
-    </div>
+    <h1>Reports</h1>
 
 
 </section>
+]
+
+
+<section class="features">
+
+
+
+    <ul class="grid">
+        <li>
+
+            <a href="client_report"><h4>Client Report</h4></a>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
+        </li>
+        <li>
+            <a href="product_report"><h4>Products Report</h4></a>
+            <i class="fa fa-shopping-cart"></i>
+        </li>
+
+        </div>
+</section>
+

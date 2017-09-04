@@ -12,3 +12,16 @@ C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\Mong
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.dll
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.pdb
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\Domain.dll
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\Domain.pdb
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Bson.dll
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.dll
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Bson.xml
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.xml
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.dll
+C:\Users\Priscilla\Documents\GitHub\CoreVises\Domain\obj\Debug\Domain.pdb

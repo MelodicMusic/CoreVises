@@ -20,10 +20,43 @@ namespace WebServices.Controllers
             return View();
         }
 
-        // GET: MMUser
+        public ActionResult Retrieve()
+        {
+            return View();
+        }
+
+
+        public ActionResult Delete()
+        {
+            return View();
+        }
+
+
+        public ActionResult Users()
+        {
+            return View();
+        }
+
+
+
+        // reports
         public ActionResult Reports()
         {
             return View();
         }
+
+
+
+        public ActionResult ClientReport()
+        {
+            return View();
+        }
+
+        public ActionResult ProductsReports()
+        {
+            return View();
+        }
+
+
     }
 }

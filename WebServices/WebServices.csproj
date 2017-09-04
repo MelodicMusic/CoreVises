@@ -298,15 +298,23 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\MMProduct\Insert.cshtml" />
-    <Content Include="Views\MMUser\Update.cshtml" />
-    <Content Include="Views\MMUser\Reports.cshtml" />
-    <Content Include="Views\MMUser\Create.cshtml" />
+    <Content Include="Views\MMProduct\Products.cshtml" />
+    <Content Include="Views\MMProduct\Retrieve.cshtml" />
+    <Content Include="Views\MMProduct\Update.cshtml" />
     <Content Include="Views\MMProduct\Delete.cshtml" />
+    <Content Include="Views\MMUser\Users.cshtml" />
+    <Content Include="Views\MMUser\Update.cshtml" />
+    <Content Include="Views\MMUser\Retrieve.cshtml" />
+    <Content Include="Views\MMUser\Reports.cshtml" />
+    <Content Include="Views\MMUser\ProductsReports.cshtml" />
+    <Content Include="Views\MMUser\Delete.cshtml" />
+    <Content Include="Views\MMUser\Create.cshtml" />
+    <Content Include="Views\MMUser\ClientReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj">

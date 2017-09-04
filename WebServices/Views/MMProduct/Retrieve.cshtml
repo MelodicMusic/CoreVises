@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Buscar Productos";
+    @Styles.Render("~/Content/mainstyles.css");
+    @Styles.Render("~/Content/SearchProducts.css");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="welcome">
+    <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
+
+
+    <div class="main-content">
+
+
+
+        <form class="form-basic" method="post" action="#">
+
+
+            <input type="text" name="brand" placeholder="what are you looking for?">
+            <button type="submit">Search </button>
+
+        </form>
+
+    </div>
+
+
+</section>
+
