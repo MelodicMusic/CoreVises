@@ -64,9 +64,9 @@ namespace Data
             var collection = database.GetCollection<BsonDocument>("product");
             BsonDocument document = product.ToBsonDocument();
 
-        
-                collection.InsertOne(document);
-          
+
+            collection.InsertOne(document);
+
             product._id = document["_id"].AsObjectId;
             return product;
 
@@ -119,7 +119,8 @@ namespace Data
             var collection = database.GetCollection<BsonDocument>("product");
 
 
-            var filter = Builders<BsonDocument>.Filter.Regex("name", name);
+            // var filter = Builders<BsonDocument>.Filter.Regex("name", name);
+            var filter = Builders<BsonDocument>.Filter.Regex("name", new BsonRegularExpression(".*" + name + ".*", "i"));
             var result = collection.Find(filter).ToList();
             if (result != null)
             {
