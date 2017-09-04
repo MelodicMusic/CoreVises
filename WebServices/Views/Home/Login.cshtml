@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Melodic Music";
+    @Styles.Render("~/Content/mainstyles.css");
+    @Styles.Render("~/Content/form-login.css");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="welcome">
+    <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
+
+
+
+    <form class="form-login" method="post" action="#">
+
+        <div class="form-log-in-with-email">
+
+            <div class="form-white-background">
+
+                <div class="form-title-row">
+                    <h1>Log in</h1>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password">
+                    </label>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit">Log in</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </form>
+
+</section>
+
+

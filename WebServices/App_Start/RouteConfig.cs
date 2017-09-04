@@ -13,7 +13,7 @@ namespace WebServices
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
+            // map Products
             routes.MapRoute(
                 name: "InsertProduct",
                 url: "insert_product",
@@ -34,12 +34,53 @@ namespace WebServices
                 }
              );
 
+            routes.MapRoute(
+                name: "UpdateProduct",
+                url: "update_product",
+                defaults: new
+                {
+                    controller = "MMProduct",
+                    action = "Update"
+                }
+             );
+
+            routes.MapRoute(
+                name: "Products",
+                url: "products",
+                defaults: new
+                {
+                    controller = "MMProduct",
+                    action = "Products"
+                }
+             );
+
+            routes.MapRoute(
+               name: "RetrieveProduct",
+               url: "retrieve_products",
+               defaults: new
+               {
+                   controller = "MMProduct",
+                   action = "Retrieve"
+               }
+            );
 
 
 
 
 
 
+            //map Users
+
+
+            routes.MapRoute(
+               name: "Users",
+               url: "users",
+               defaults: new
+               {
+                   controller = "MMUser",
+                   action = "Users"
+               }
+            );
 
             routes.MapRoute(
                 name: "UpdateUser",
@@ -61,9 +102,37 @@ namespace WebServices
                 }
              );
 
+
             routes.MapRoute(
-                name: "ClientsReport",
-                url: "report_user",
+            name: "DeleteUser",
+            url: "delete_user",
+            defaults: new
+            {
+                controller = "MMUser",
+                action = "Delete"
+            }
+         );
+
+            routes.MapRoute(
+          name: "RetrieveUser",
+          url: "retrieve_user",
+          defaults: new
+          {
+              controller = "MMUser",
+              action = "Retrieve"
+          }
+       );
+
+
+
+
+
+
+
+            //map reports
+            routes.MapRoute(
+                name: "Reports",
+                url: "reports",
                 defaults: new
                 {
                     controller = "MMUser",
@@ -73,11 +142,44 @@ namespace WebServices
 
 
             routes.MapRoute(
+                name: "ClientsReport",
+                url: "client_report",
+                defaults: new
+                {
+                    controller = "MMUser",
+                    action = "ClientReport"
+                }
+             );
+
+
+            routes.MapRoute(
+                name: "ProductsReport",
+                url: "product_report",
+                defaults: new
+                {
+                    controller = "MMUser",
+                    action = "ProductsReports"
+                }
+             );
+
+
+            routes.MapRoute(
+               name: "Login",
+               url: "login",
+               defaults: new
+               {
+                   controller = "Home",
+                   action = "Login"
+               }
+            );
+
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-            
+
         }
     }
 }
