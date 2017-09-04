@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Crear Usuario";
+    @Styles.Render("~/Content/mainstyles.css");
+    @Styles.Render("~/Content/products.css");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<section class="welcome">
+    <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
+    <h1>Create a User</h1>
+
+
+    <div class="main-content">
+
+
+        <form class="form-basic" method="post" action="#">
+
+            <div class="form-row">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="brand">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>LastName</span>
+                    <input type="text" name="price">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Confirm Password</span>
+                    <input type="password" name="password">
+                </label>
+            </div>
+
+
+
+            <div class="form-row">
+                <label>
+                    <span>Role</span>
+                    <select name="dropdown">
+                        <option>Admin</option>
+                        <option>User</option>
+
+                    </select>
+                </label>
+            </div>
+
+
+            <div class="form-row">
+                <button type="submit">Insert</button>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</section>
+
+
+
+<section class="features">
+    <h3 class="title">Services</h3>
+
+    <hr>
+
+    <ul class="grid">
+        <li>
+            <i class="fa fa-users"></i>
+            <h4>Users</h4>
+            <p>Create users to administrate this page.</p>
+        </li>
+        <li>
+            <i class="fa fa-shopping-cart"></i>
+            <h4>Products</h4>
+            <p>Insert, retieve, update and delete products of the company. </p>
+        </li>
+        <li>
+            <i class="fa fa-usd"></i>
+            <h4>Purchases</h4>
+            <p>Administrate purchases, serach by features</p>
+        </li>
+        </div>
+</section>

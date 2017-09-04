@@ -45,10 +45,10 @@ namespace WebServices.Controllers
         {
             User user = new User();
             string id = des.Decrypt(cryptedId);
-            string jsonValue = des.Decrypt(value.ToString());
-            user = JsonConvert.DeserializeObject<User>(jsonValue);
+            string JsonValue = des.Decrypt(value.ToString());
+            user = JsonConvert.DeserializeObject<User>(JsonValue);
 
-            return this.userBusiness.UpdateUser(id, user);
+            return this.userBusiness.UpdateUser(cryptedId, user);
         }
 
     }
