@@ -4,9 +4,53 @@
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/products.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Domain.User u = new Domain.User();
+    Business.UserBusiness ub = new Business.UserBusiness();
+    String name = "", lastname = "", email = "", password = "", role = "", cardNumber = "", confirmP = "";
 
-    Business.UserBusiness users = new Business.UserBusiness();
-}
+    MongoDB.Bson.ObjectId id = new MongoDB.Bson.ObjectId();
+
+    }
+
+
+@{
+    if (IsPost)
+    {
+
+        if (Request.Form["submitSearch"] != null)
+        {
+
+            u = ub.SearchUser(Request.Form["userNames"]);
+            name = u.name;
+            lastname = u.lastName;
+            email = u.email;
+            password = u.password;
+            role = u.role;
+            cardNumber = u.cardNumber;
+            confirmP = password;
+
+        }
+        else
+        {
+            u.name = Request.Form["name"];
+            u.password = Request.Form["password"];
+            u.role = Request.Form["role"];
+            u.lastName = Request.Form["lastname"];
+            u.email = Request.Form["email"];
+            u.cardNumber = Request.Form["cardNumber"];
+
+            if (ub.UpdateUser(MongoDB.Bson.ObjectId.Parse(Request.Form["userNames"]), u))
+            {
+
+                <script type="text/javascript">
+                    alert("You have  updated  successfully");
+                </script>
+                }
+            }
+
+        }
+
+    }
 
 <section class="welcome">
     <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
@@ -28,10 +72,10 @@
 
 
 
-                            for (int i = 0; i < users.GetUsers().ToArray().Length; i++)
+                            for (int i = 0; i < ub.GetUsers().ToArray().Length; i++)
                             {
-                                String email = users.GetUsers().ToArray()[i].email.ToString();
-                                String id = users.GetUsers().ToArray()[i]._id.ToString();
+                                 email = ub.GetUsers().ToArray()[i].email.ToString();
+                                 id = ub.GetUsers().ToArray()[i]._id;
 
                                 <option id="a" value=@id>@email</option>
                             }
@@ -43,38 +87,38 @@
             </div>
 
             <div class="form-row">
-                <button type="submit">Update</button>
+                <button type="submit" name="submitSearch">Update</button>
             </div>
 
             <div class="form-row">
                 <label>
                     <span>Name</span>
-                    <input type="text" name="brand">
+                    <input type="text" name="name" value=@name >
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>LastName</span>
-                    <input type="text" name="price">
+                    <input type="text" name="lastname" value="@lastname">
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Email</span>
-                    <input type="email" name="email">
+                    <input type="email" name="email" value=@email>
                 </label>
             </div>
 
             <div class="form-row">
                 <label>
                     <span>Password</span>
-                    <input type="password" name="password">
+                    <input type="password" name="password" value=@password>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Confirm Password</span>
-                    <input type="password" name="password">
+                    <input type="password" name="confirmPassword" value=@confirmP>
                 </label>
             </div>
 
@@ -91,9 +135,16 @@
                 </label>
             </div>
 
+            <div class="form-row">
+                <label>
+                    <span>Card Number</span>
+                    <input type="text" name="cardNumber" value="@cardNumber">
+                </label>
+            </div>
+
 
             <div class="form-row">
-                <button type="submit">Save changes</button>
+                <button type="submit" name="submitUpdate">Save changes</button>
             </div>
 
         </form>
@@ -102,21 +153,3 @@
 
 
 </section>
-
-
-
-@{
-    Business.UserBusiness ui = new Business.UserBusiness();
-
-
-    for (int i = 0; i < users.GetUsers().ToArray().Length; i++)
-    {
-        String email = users.GetUsers().ToArray()[i].email.ToString();
-        String id = users.GetUsers().ToArray()[i]._id.ToString();
-
-        <option id="a" value=@id>@email</option>
-    }
-}
-
-@Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
-@Scripts.Render("~/Scripts/main.js")
