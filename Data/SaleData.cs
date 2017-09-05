@@ -117,7 +117,7 @@ namespace Data
                 foreach (var document in result)
                 {
                     Sale sale = new Sale();
-                    sale._id = document["_id"].ToString();
+                    sale._id = document["_id"].AsObjectId;
                     sale.date = DateTime.Parse(document["date"].ToString());
                     sale.userId = document["userId"].ToString();
                     sale.productId = document["productId"].ToString();
@@ -147,7 +147,7 @@ namespace Data
                 foreach (var document in result)
                 {
                     Sale sale = new Sale();
-                    sale._id = document["_id"].ToString();
+                    sale._id = document["_id"].AsObjectId;
                     sale.date = DateTime.Parse(document["date"].ToString());
                     sale.userId = document["userId"].ToString();
                     sale.productId = document["productId"].ToString();
