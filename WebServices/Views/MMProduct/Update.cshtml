@@ -3,9 +3,56 @@
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/products.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    Business.ProductBusiness pb = new Business.ProductBusiness();
+    Domain.Product p = new Domain.Product();
+    string id = "";
+    String name = "", category = "", brand = "", description = "", imageUrl = "";
+    float price = 0;
 }
 
 
+@{
+    if (IsPost)
+    {
+
+        if (Request.Form["submitSearch"] != null)
+        {
+
+            p = pb.GetProductById(MongoDB.Bson.ObjectId.Parse(Request.Form["products"]));
+
+            brand = p.brand;
+            category = p.category;
+            description = p.description;
+            imageUrl = p.imageUrl;
+            name = p.name;
+            price = p.price;
+
+        }
+        else
+        {
+            p.imageUrl = Request.Form["imageUrl"];
+            p.name = Request.Form["name"];
+            p.price = Request.Form["price"].AsFloat();
+            p.description = Request.Form["description"];
+            p.category = Request.Form["category"];
+            p.brand = Request.Form["brand"];
+
+
+
+
+       if(pb.Update(Request.Form["products"],p))
+            {
+                <script type="text/javascript">
+                    alert("You have  updated  successfully");
+                </script>
+            }
+        }
+
+    }//isPost
+
+}
 
 <section class="welcome">
     <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
@@ -21,7 +68,24 @@
             <div class="form-row">
                 <label>
                     <span>Select a product to update bellow</span>
-                    <select name="dropdown"></select>
+                    <select name="products">
+
+                        @{
+
+
+
+                            for (int i = 0; i < pb.GetProducts().ToArray().Length; i++)
+                            {
+                                name = pb.GetProducts().ToArray()[i].name.ToString();
+                                id = pb.GetProducts().ToArray()[i]._id.ToString();
+
+                                <option id=@id value=@id>@name</option>
+                            }
+                        }
+
+
+
+                    </select>
                 </label>
             </div>
 
@@ -33,19 +97,26 @@
             <div class="form-row">
                 <label>
                     <span>Brand</span>
-                    <input type="text" name="brand">
+                    <input type="text" name="brand" value=@brand required>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Price</span>
-                    <input type="text" name="price">
+                    <input type="text" name="price" value=@price required>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Name</span>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value=@name required>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>URL Imagen</span>
+                    <input type="text" name="imageUrl" value=@imageUrl required>
                 </label>
             </div>
 
@@ -53,7 +124,7 @@
             <div class="form-row">
                 <label>
                     <span>Category</span>
-                    <select name="dropdown">
+                    <select name="category">
                         <option>Viento</option>
                         <option>Cuerda</option>
                         <option>Percusion</option>
@@ -64,7 +135,7 @@
             <div class="form-row">
                 <label>
                     <span>Description</span>
-                    <textarea name="textarea"></textarea>
+                    <textarea name="description"  value=@description required></textarea>
                 </label>
             </div>
 
