@@ -10,7 +10,8 @@ namespace Domain
 {
     public class Sale
     {
-        public string _id { get; set; }
+        [BsonId]
+        public ObjectId _id { get; set; }
         public DateTime date { get; set; }
         public string userId { get; set; }
         public string productId { get; set; }

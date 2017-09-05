@@ -36,7 +36,7 @@ namespace Data
                 collection.ReplaceOne(filter, sale.ToBsonDocument());
                 return true;
             }
-            catch(MongoException)
+            catch (MongoException)
             {
                 return false;
             }
@@ -61,7 +61,7 @@ namespace Data
             var collection = database.GetCollection<BsonDocument>("sale");
             BsonDocument document = sale.ToBsonDocument();
             collection.InsertOne(document);
-            sale._id = document["_id"].ToString();
+            sale._id = document["_id"].AsObjectId;
             return sale;
 
         }
@@ -75,7 +75,7 @@ namespace Data
             var result = collection.Find(filter).FirstOrDefault();
 
             Sale sale = new Sale();
-            sale._id = result["_id"].ToString();
+            sale._id = result["_id"].AsObjectId;
             sale.date = DateTime.Parse(result["date"].ToString());
             sale.userId = result["userId"].ToString();
             sale.productId = result["productId"].ToString();
@@ -93,7 +93,7 @@ namespace Data
             foreach (var document in documents)
             {
                 Sale sale = new Sale();
-                sale._id = document["_id"].ToString();
+                sale._id = document["_id"].AsObjectId;
                 sale.date = DateTime.Parse(document["date"].ToString());
                 sale.userId = document["userId"].ToString();
                 sale.productId = document["productId"].ToString();
@@ -104,5 +104,66 @@ namespace Data
 
             return sales;
         }
+
+        public List<Sale> getSalesByClient(string userId)
+        {
+            List<Sale> sales = new List<Sale>();
+            var collection = database.GetCollection<BsonDocument>("sale");
+            var filter = Builders<BsonDocument>.Filter.Eq("userId", userId);
+            var result = collection.Find(filter).ToList();
+
+            if (result != null)
+            {
+                foreach (var document in result)
+                {
+                    Sale sale = new Sale();
+                    sale._id = document["_id"].ToString();
+                    sale.date = DateTime.Parse(document["date"].ToString());
+                    sale.userId = document["userId"].ToString();
+                    sale.productId = document["productId"].ToString();
+                    sale.detail = document["detail"].ToString();
+
+                    sales.Add(sale);
+                }
+
+                return sales;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        public List<Sale> getSalesByProduct(string productId)
+        {
+            List<Sale> sales = new List<Sale>();
+            var collection = database.GetCollection<BsonDocument>("sale");
+            var filter = Builders<BsonDocument>.Filter.Eq("productId", productId);
+            var result = collection.Find(filter).ToList();
+
+            if (result != null)
+            {
+                foreach (var document in result)
+                {
+                    Sale sale = new Sale();
+                    sale._id = document["_id"].ToString();
+                    sale.date = DateTime.Parse(document["date"].ToString());
+                    sale.userId = document["userId"].ToString();
+                    sale.productId = document["productId"].ToString();
+                    sale.detail = document["detail"].ToString();
+
+                    sales.Add(sale);
+                }
+
+                return sales;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
     }
 }

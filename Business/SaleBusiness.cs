@@ -36,5 +36,13 @@ namespace Business
         {
             return saleData.GetSales();
         }
+        public List<Sale> getSalesByClient(string userId)
+        {
+            return saleData.getSalesByClient(userId);
+        }
+        public List<Sale> getSalesByProduct(string productId)
+        {
+            return saleData.getSalesByProduct(productId);
+        }
     }
 }

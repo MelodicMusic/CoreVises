@@ -33,7 +33,7 @@ namespace Data
 
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
 
-                user._id = objectId;
+                user._id = ObjectId.Parse(objectId);
 
                 collection.ReplaceOne(filter, user.ToBsonDocument());
                 return true;
@@ -63,7 +63,7 @@ namespace Data
             var collection = database.GetCollection<BsonDocument>("user");
             BsonDocument document = user.ToBsonDocument();
             collection.InsertOne(document);
-            user._id = document["_id"].ToString();
+            user._id = document["_id"].AsObjectId;
             return user;
 
         }
@@ -77,7 +77,7 @@ namespace Data
             var result = collection.Find(filter).FirstOrDefault();
 
             User user = new User();
-            user._id = result["_id"].ToString();
+            user._id = result["_id"].AsObjectId;
             user.name = result["name"].ToString();
             user.lastName = result["lastName"].ToString();
             user.email = result["email"].ToString();
@@ -99,7 +99,7 @@ namespace Data
             if (result != null)
             {
                 User user = new User();
-                user._id = result["_id"].ToString();
+                user._id = result["_id"].AsObjectId;
                 user.name = result["name"].ToString();
                 user.lastName = result["lastName"].ToString();
                 user.email = result["email"].ToString();
@@ -125,7 +125,7 @@ namespace Data
             if (result != null && result["role"].ToString() == "admin")
             {
                 User user = new User();
-                user._id = result["_id"].ToString();
+                user._id = result["_id"].AsObjectId;
                 user.name = result["name"].ToString();
                 user.lastName = result["lastName"].ToString();
                 user.email = result["email"].ToString();
@@ -150,7 +150,7 @@ namespace Data
             foreach (var document in documents)
             {
                 User user = new User();
-                user._id = document["_id"].ToString();
+                user._id = document["_id"].AsObjectId;
                 user.name = document["name"].ToString();
                 user.lastName = document["lastName"].ToString();
                 user.email = document["email"].ToString();
@@ -161,6 +161,24 @@ namespace Data
             }
 
             return users;
+        }
+
+        public bool verifyEmail(string email)
+        {
+            var collection = database.GetCollection<BsonDocument>("user");
+            var filter = Builders<BsonDocument>.Filter.Eq("email", email);
+            var result = collection.Find(filter).FirstOrDefault();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
     }
 }
