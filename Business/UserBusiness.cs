@@ -45,5 +45,9 @@ namespace Business
         {
             return userData.LogInAsAdmin(email, password);
         }
+        public bool verifyEmail(string email)
+        {
+            return userData.verifyEmail(email);
+        }
     }
 }
