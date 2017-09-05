@@ -162,5 +162,23 @@ namespace Data
 
             return users;
         }
+
+        public bool verifyEmail(string email)
+        {
+            var collection = database.GetCollection<BsonDocument>("user");
+            var filter = Builders<BsonDocument>.Filter.Eq("email", email);
+            var result = collection.Find(filter).FirstOrDefault();
+
+            if (result != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
     }
 }
