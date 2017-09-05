@@ -21,11 +21,9 @@
 
     if (IsPost)
     {
-        <script type="text/javascript">
-            alert("Are you sure that you want to delete  this product ?");
-        </script>
+      
 
-        pu.Delete(id);
+        pu.Delete(Request.Form["products"]);
 
 
             <script type="text/javascript">

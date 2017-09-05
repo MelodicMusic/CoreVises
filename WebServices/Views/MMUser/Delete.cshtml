@@ -19,11 +19,9 @@
 
     if (IsPost)
     {
-        <script type="text/javascript">
-            alert("Are you sure that you want to delete  this user ?");
-        </script>
+       
 
-        if (ub.DeleteUser(id))
+        if (ub.DeleteUser(MongoDB.Bson.ObjectId.Parse(Request.Form["usuarios"])))
         {
             <script type="text/javascript">
                 alert("You have deleted the user successfully");
@@ -54,7 +52,7 @@
             <div class="form-row">
                 <label>
                     <span>Select an user to delete</span>
-                    <select name="dropdown">
+                    <select name="usuarios">
 
 
 

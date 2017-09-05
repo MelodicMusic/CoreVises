@@ -6,7 +6,7 @@
 
     Business.ProductBusiness pb = new Business.ProductBusiness();
     Domain.Product p = new Domain.Product();
-    MongoDB.Bson.ObjectId id = new MongoDB.Bson.ObjectId();
+   string id="";
     String name = "", category = "", brand = "", description = "", imageUrl = "";
     float price = 0;
 }
@@ -16,13 +16,8 @@
     if (IsPost)
     {
 
-        <text>
-            You entered:@id
-           
-        </text>
-
-        p = pb.GetProductById(id);
-
+        p = pb.GetProductById(MongoDB.Bson.ObjectId.Parse(Request.Form["products"]));
+         
         brand = p.brand;
         category = p.category;
         description = p.description;
@@ -48,7 +43,7 @@
 
             <div class="form-row">
                 <label>
-                    <span>Select a product to delete</span>
+                   
                     <select name="products">
 
                         @{
@@ -58,9 +53,9 @@
                             for (int i = 0; i < pb.GetProducts().ToArray().Length; i++)
                             {
                                 name = pb.GetProducts().ToArray()[i].name.ToString();
-                                id = pb.GetProducts().ToArray()[i]._id;
+                                id = pb.GetProducts().ToArray()[i]._id.ToString();
 
-                                <option id="a" value=@id>@name</option>
+                                <option id=@id value=@id>@name</option>
                             }
                         }
 
@@ -76,19 +71,20 @@
             <div class="form-row">
                 <label>
                     <span>Brand</span>
-                  @brand
+                  <span>@brand</span>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Price</span>
-                   @price
+                   <span>@price</span>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Name</span>
-                  @name
+                    <span>@name</span>
+                  
                 </label>
             </div>
 
@@ -96,20 +92,18 @@
             <div class="form-row">
                 <label>
                     <span>Category</span>
-                  @category
+                  <span>@category</span>
                 </label>
             </div>
             <div class="form-row">
-                <label>
-                    <span>url</span>
-                  @imageUrl
-                </label>
+                <label><img src=@imageUrl width="200"></img></label>
+              
             </div>
 
             <div class="form-row">
                 <label>
                     <span>Description</span>
-                   @description
+                  <span>@description</span> 
                 </label>
             </div>
 
