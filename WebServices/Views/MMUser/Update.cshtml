@@ -4,6 +4,8 @@
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/products.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Business.UserBusiness users = new Business.UserBusiness();
 }
 
 <section class="welcome">
@@ -23,7 +25,7 @@
                     <select id="userNames" name="userNames">
 
                         @{
-                            Business.UserBusiness users = new Business.UserBusiness();
+
 
 
                             for (int i = 0; i < users.GetUsers().ToArray().Length; i++)

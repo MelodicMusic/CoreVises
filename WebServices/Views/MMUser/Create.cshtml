@@ -5,6 +5,49 @@
     @Styles.Render("~/Content/products.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
 
+    Business.UserBusiness ub = new Business.UserBusiness();
+    String id = "", name = "", lastname = "", email = "", password = "", role = "", cardnumber = "";
+
+
+}
+
+
+
+@{
+
+
+
+    if (IsPost)
+    {
+        name = Request.Form["name"];
+        lastname = Request.Form["lastname"];
+        email = Request.Form["email"];
+        password = Request.Form["password"];
+        role = Request.Form["role"];
+        cardnumber = Request.Form["cardnumber"];
+
+        Domain.User u = new Domain.User();
+
+        u.cardNumber = cardnumber;
+        u.name = name;
+        u.email = email;
+        u.role = role;
+        u.password = password;
+        u.lastName = lastname;
+
+
+        u = ub.SignUp(u);
+
+        if (!u.Equals(null))
+        {
+
+
+            <script type="text/javascript">
+         alert("You have inserted the user successfully");
+            </script>
+        }
+
+    }
 }
 
 <section class="welcome">
@@ -20,32 +63,38 @@
             <div class="form-row">
                 <label>
                     <span>Name</span>
-                    <input type="text" name="brand">
+                    <input type="text" name="name" required>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>LastName</span>
-                    <input type="text" name="price">
+                    <input type="text" name="lastname" required>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Email</span>
-                    <input type="email" name="email">
+                    <input type="email" name="email" required>
                 </label>
             </div>
 
             <div class="form-row">
                 <label>
                     <span>Password</span>
-                    <input type="password" name="password">
+                    <input type="password" name="password" required>
                 </label>
             </div>
             <div class="form-row">
                 <label>
                     <span>Confirm Password</span>
-                    <input type="password" name="password">
+                    <input type="password" name="password" required>
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>CardNumber</span>
+                    <input type="text" name="cardNumber" required>
                 </label>
             </div>
 
@@ -54,7 +103,7 @@
             <div class="form-row">
                 <label>
                     <span>Role</span>
-                    <select name="dropdown">
+                    <select name="role">
                         <option>Admin</option>
                         <option>User</option>
 
@@ -75,27 +124,3 @@
 </section>
 
 
-
-<section class="features">
-    <h3 class="title">Services</h3>
-
-    <hr>
-
-    <ul class="grid">
-        <li>
-            <i class="fa fa-users"></i>
-            <h4>Users</h4>
-            <p>Create users to administrate this page.</p>
-        </li>
-        <li>
-            <i class="fa fa-shopping-cart"></i>
-            <h4>Products</h4>
-            <p>Insert, retieve, update and delete products of the company. </p>
-        </li>
-        <li>
-            <i class="fa fa-usd"></i>
-            <h4>Purchases</h4>
-            <p>Administrate purchases, serach by features</p>
-        </li>
-        </div>
-</section>

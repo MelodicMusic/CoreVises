@@ -4,6 +4,34 @@
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/products.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    Business.UserBusiness ub = new Business.UserBusiness();
+    String id = "", name = "", lastname = "", email = "", password = "", role = "", cardnumber = "";
+
+
+}
+
+
+@{
+
+
+
+    if (IsPost)
+    {
+        <script type="text/javascript">
+            alert("Are you sure that you want to delete  this user ?");
+        </script>
+
+        ub.DeleteUser(id);
+
+
+        <script type="text/javascript">
+         alert("You have deleted the user successfully");
+        </script>
+    }
+
+}
 }
 
 
@@ -21,7 +49,24 @@
             <div class="form-row">
                 <label>
                     <span>Select an user to delete</span>
-                    <select name="dropdown"></select>
+                    <select name="dropdown">
+
+
+
+
+                        @{
+
+
+
+                            for (int i = 0; i < ub.GetUsers().ToArray().Length; i++)
+                            {
+                                email = ub.GetUsers().ToArray()[i].email.ToString();
+                                id = ub.GetUsers().ToArray()[i]._id.ToString();
+
+                                <option id="a" value=@id>@email</option>
+                            }
+                        }
+                    </select>
                 </label>
             </div>
 

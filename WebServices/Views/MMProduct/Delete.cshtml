@@ -4,7 +4,40 @@
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/SearchProducts.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    Business.ProductBusiness pu = new Business.ProductBusiness();
+    String id = "", name = "", category = "", brand = "", description = "", imageUrl = "";
+    float price = 0;
+
+
 }
+
+
+
+@{
+
+
+
+    if (IsPost)
+    {
+        <script type="text/javascript">
+            alert("Are you sure that you want to delete  this product ?");
+        </script>
+
+        pu.Delete(id);
+
+
+            <script type="text/javascript">
+         alert("You have deleted the product successfully");
+            </script>
+    }
+
+    }
+}
+
+
+
 
 <section class="welcome">
     <div class="background-image" style="background-image: url(Img/background.jpg);"></div>
@@ -20,7 +53,24 @@
             <div class="form-row">
                 <label>
                     <span>Select a product to delete</span>
-                    <select name="dropdown"></select>
+                    <select name="products">
+
+                        @{
+
+
+
+                            for (int i = 0; i < pu.GetProducts().ToArray().Length; i++)
+                            {
+                                name = pu.GetProducts().ToArray()[i].name.ToString();
+                                id = pu.GetProducts().ToArray()[i]._id.ToString();
+
+                                <option id="a" value=@id>@name</option>
+                            }
+                        }
+
+
+
+                    </select>
                 </label>
             </div>
 
