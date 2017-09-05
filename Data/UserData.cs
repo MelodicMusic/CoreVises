@@ -24,16 +24,16 @@ namespace Data
             this.database = client.GetDatabase("shop_melodic_music");
         }
 
-        public Boolean UpdateUser(string objectId, User user)
+        public Boolean UpdateUser(ObjectId objectId, User user)
         {
             try
             {
 
                 var collection = database.GetCollection<BsonDocument>("user");
 
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
 
-                user._id = ObjectId.Parse(objectId);
+                user._id =objectId;
 
                 collection.ReplaceOne(filter, user.ToBsonDocument());
                 return true;
@@ -43,12 +43,12 @@ namespace Data
                 return false;
             }
         }
-        public Boolean DeleteUser(string objectId)
+        public Boolean DeleteUser(ObjectId objectId)
         {
             try
             {
                 var collection = database.GetCollection<BsonDocument>("user");
-                var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", objectId);
                 collection.DeleteOne(filter);
                 return true;
             }

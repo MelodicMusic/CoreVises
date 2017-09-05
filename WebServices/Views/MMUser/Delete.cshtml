@@ -7,8 +7,8 @@
 
 
     Business.UserBusiness ub = new Business.UserBusiness();
-    String id = "", name = "", lastname = "", email = "", password = "", role = "", cardnumber = "";
-
+    String  name = "", lastname = "", email = "", password = "", role = "", cardnumber = "";
+    MongoDB.Bson.ObjectId id= new MongoDB.Bson.ObjectId();
 
 }
 
@@ -23,16 +23,21 @@
             alert("Are you sure that you want to delete  this user ?");
         </script>
 
-        ub.DeleteUser(id);
+        if (ub.DeleteUser(id))
+        {
+            <script type="text/javascript">
+                alert("You have deleted the user successfully");
+            </script>
 
 
-        <script type="text/javascript">
-         alert("You have deleted the user successfully");
-        </script>
+        }
+
+
+
     }
 
 }
-}
+
 
 
 <section class="welcome">
@@ -56,12 +61,10 @@
 
                         @{
 
-
-
                             for (int i = 0; i < ub.GetUsers().ToArray().Length; i++)
                             {
                                 email = ub.GetUsers().ToArray()[i].email.ToString();
-                                id = ub.GetUsers().ToArray()[i]._id.ToString();
+                                id = ub.GetUsers().ToArray()[i]._id;
 
                                 <option id="a" value=@id>@email</option>
                             }

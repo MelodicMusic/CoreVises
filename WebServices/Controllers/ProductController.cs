@@ -7,6 +7,7 @@ using System.Web.Http;
 using Domain;
 using Business;
 using Newtonsoft.Json;
+using MongoDB.Bson;
 
 namespace WebServices.Controllers
 {
@@ -24,7 +25,7 @@ namespace WebServices.Controllers
         public Product Get(string id)
         {
             Product product = new Product();
-            product = this.productBusiness.GetProductById(id);
+            product = this.productBusiness.GetProductById(ObjectId.Parse(id));
 
             return product;
         }

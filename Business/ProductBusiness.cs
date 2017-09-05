@@ -27,7 +27,7 @@ namespace Business
             return productData.InsertProduct(product);
 
         }
-        public Product GetProductById(String productId)
+        public Product GetProductById(ObjectId productId)
         {
             return productData.GetProductById(productId);
         }

@@ -8,6 +8,7 @@ using Domain;
 using Business;
 using Newtonsoft.Json;
 using WebServices.Security;
+using MongoDB.Bson;
 
 namespace WebServices.Controllers
 {
@@ -61,7 +62,7 @@ namespace WebServices.Controllers
             //string JsonValue = des.Decrypt(value.ToString());
             user = JsonConvert.DeserializeObject<User>(value.ToString());
 
-            return this.userBusiness.UpdateUser(id, user);
+            return this.userBusiness.UpdateUser(ObjectId.Parse(id), user);
         }
 
     }

@@ -3,6 +3,36 @@
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/SearchProducts.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Business.ProductBusiness pb = new Business.ProductBusiness();
+    Domain.Product p = new Domain.Product();
+    MongoDB.Bson.ObjectId id = new MongoDB.Bson.ObjectId();
+    String name = "", category = "", brand = "", description = "", imageUrl = "";
+    float price = 0;
+}
+
+@{
+
+    if (IsPost)
+    {
+
+        <text>
+            You entered:@id
+           
+        </text>
+
+        p = pb.GetProductById(id);
+
+        brand = p.brand;
+        category = p.category;
+        description = p.description;
+        imageUrl = p.imageUrl;
+        name = p.name;
+        price = p.price;
+
+    }
+
+
 }
 
 <section class="welcome">
@@ -16,8 +46,74 @@
         <form class="form-basic" method="post" action="#">
 
 
-            <input type="text" name="brand" placeholder="what are you looking for?">
+            <div class="form-row">
+                <label>
+                    <span>Select a product to delete</span>
+                    <select name="products">
+
+                        @{
+
+
+
+                            for (int i = 0; i < pb.GetProducts().ToArray().Length; i++)
+                            {
+                                name = pb.GetProducts().ToArray()[i].name.ToString();
+                                id = pb.GetProducts().ToArray()[i]._id;
+
+                                <option id="a" value=@id>@name</option>
+                            }
+                        }
+
+
+
+                    </select>
+                </label>
+            </div>
             <button type="submit">Search </button>
+
+            @{ 
+
+            <div class="form-row">
+                <label>
+                    <span>Brand</span>
+                  @brand
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Price</span>
+                   @price
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Name</span>
+                  @name
+                </label>
+            </div>
+
+
+            <div class="form-row">
+                <label>
+                    <span>Category</span>
+                  @category
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>url</span>
+                  @imageUrl
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Description</span>
+                   @description
+                </label>
+            </div>
+
+                }
 
         </form>
 

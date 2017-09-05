@@ -4,12 +4,13 @@
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/products.css");
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Business.ProductBusiness pb = new Business.ProductBusiness();
 }
 
 
 @{
 
-    Business.ProductBusiness pb = new Business.ProductBusiness();
+
 
     if (IsPost)
     {
@@ -33,7 +34,7 @@
         if (!p.Equals(null))
         {
 
-    
+
             <script type="text/javascript">
          alert("You have inserted the product successfully");
             </script>

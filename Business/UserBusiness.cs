@@ -13,14 +13,14 @@ namespace Business
     {
         private UserData userData = new UserData();
 
-        public Boolean UpdateUser(string objectId, User user)
+        public Boolean UpdateUser(ObjectId objectId, User user)
         {
             return userData.UpdateUser(objectId, user);
         }
 
-        public void DeleteUser(string objectId)
+        public bool DeleteUser(ObjectId objectId)
         {
-            userData.DeleteUser(objectId);
+           return userData.DeleteUser(objectId);
         }
         public User SignUp(User user)
         {

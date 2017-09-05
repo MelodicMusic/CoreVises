@@ -71,12 +71,12 @@ namespace Data
             return product;
 
         }
-        public Product GetProductById(String productId)
+        public Product GetProductById(ObjectId productId)
         {
 
             var collection = database.GetCollection<BsonDocument>("product");
 
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(productId));
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", productId);
 
             var result = collection.Find(filter).FirstOrDefault();
 
