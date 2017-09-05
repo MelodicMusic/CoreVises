@@ -12,15 +12,14 @@ namespace Domain
 {
     public class Product
     {
-        [BsonId]
-        public ObjectId _id { get; set; }
+        public string _id { get; set; }
         public string name { get; set; }
         public float price { get; set; }
         public string category { get; set; }
         public string brand { get; set; }
         public string description { get; set; }
         public string imageUrl { get; set; }
-    
+
 
 
     }

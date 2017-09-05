@@ -33,7 +33,7 @@ namespace Data
 
                 var filter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(objectId));
 
-                product._id = ObjectId.Parse(objectId);
+                product._id = objectId;
 
                 collection.ReplaceOne(filter, product.ToBsonDocument());
                 return true;
@@ -67,7 +67,7 @@ namespace Data
 
             collection.InsertOne(document);
 
-            product._id = document["_id"].AsObjectId;
+            product._id = document["_id"].ToString();
             return product;
 
         }
@@ -81,7 +81,7 @@ namespace Data
             var result = collection.Find(filter).FirstOrDefault();
 
             Product product = new Product();
-            product._id = result["_id"].AsObjectId;
+            product._id = result["_id"].ToString();
             product.name = result["name"].ToString();
             product.price = float.Parse(result["price"].ToString());
             product.category = result["category"].ToString();
@@ -100,7 +100,7 @@ namespace Data
             foreach (var document in documents)
             {
                 Product product = new Product();
-                product._id = document["_id"].AsObjectId;
+                product._id = document["_id"].ToString();
                 product.name = document["name"].ToString();
                 product.price = float.Parse(document["price"].ToString());
                 product.category = document["category"].ToString();
@@ -127,7 +127,7 @@ namespace Data
                 foreach (var item in result)
                 {
                     Product product = new Product();
-                    product._id = item["_id"].AsObjectId;
+                    product._id = item["_id"].ToString();
                     product.name = item["name"].ToString();
                     product.price = float.Parse(item["price"].ToString());
                     product.category = item["category"].ToString();
@@ -158,7 +158,7 @@ namespace Data
                 foreach (var item in result)
                 {
                     Product product = new Product();
-                    product._id = item["_id"].AsObjectId;
+                    product._id = item["_id"].ToString();
                     product.name = item["name"].ToString();
                     product.price = float.Parse(item["price"].ToString());
                     product.category = item["category"].ToString();
@@ -192,7 +192,7 @@ namespace Data
                 foreach (var item in result)
                 {
                     Product product = new Product();
-                    product._id = item["_id"].AsObjectId;
+                    product._id = item["_id"].ToString();
                     product.name = item["name"].ToString();
                     product.price = float.Parse(item["price"].ToString());
                     product.category = item["category"].ToString();

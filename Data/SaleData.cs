@@ -61,7 +61,7 @@ namespace Data
             var collection = database.GetCollection<BsonDocument>("sale");
             BsonDocument document = sale.ToBsonDocument();
             collection.InsertOne(document);
-            sale._id = document["_id"].AsObjectId;
+            sale._id = document["_id"].ToString();
             return sale;
 
         }
@@ -75,7 +75,7 @@ namespace Data
             var result = collection.Find(filter).FirstOrDefault();
 
             Sale sale = new Sale();
-            sale._id = result["_id"].AsObjectId;
+            sale._id = result["_id"].ToString();
             sale.date = DateTime.Parse(result["date"].ToString());
             sale.userId = result["userId"].ToString();
             sale.productId = result["productId"].ToString();
@@ -93,7 +93,7 @@ namespace Data
             foreach (var document in documents)
             {
                 Sale sale = new Sale();
-                sale._id = document["_id"].AsObjectId;
+                sale._id = document["_id"].ToString();
                 sale.date = DateTime.Parse(document["date"].ToString());
                 sale.userId = document["userId"].ToString();
                 sale.productId = document["productId"].ToString();
