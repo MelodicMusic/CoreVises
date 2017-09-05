@@ -11,3 +11,4 @@ C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\Mong
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\bin\Debug\MongoDB.Driver.Legacy.xml
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.dll
 C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.pdb
+C:\Users\Adrian\Documents\Aplicada\MelodicMusic\WebService\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

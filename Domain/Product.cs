@@ -12,7 +12,8 @@ namespace Domain
 {
     public class Product
     {
-        public string _id { get; set; }
+        [BsonId]
+        public ObjectId _id { get; set; }
         public string name { get; set; }
         public float price { get; set; }
         public string category { get; set; }

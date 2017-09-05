@@ -2,7 +2,7 @@
     ViewBag.Title = "Melodic Music";
     @Styles.Render("~/Content/mainstyles.css");
     @Styles.Render("~/Content/form-login.css");
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 
     if (IsPost)
     {
@@ -35,6 +35,7 @@
                     <label>
                         <span>Email</span>
                         <input type="email" name="email">
+                        @Html.ValidationMessage("email")
                     </label>
                 </div>
 
@@ -42,6 +43,7 @@
                     <label>
                         <span>Password</span>
                         <input type="password" name="password">
+                        @Html.ValidationMessage("password")
                     </label>
                 </div>
 
