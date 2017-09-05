@@ -15,7 +15,7 @@ namespace WebServices.Controllers
     {
 
         SaleBusiness saleBusiness = new SaleBusiness();
-        DES des = new DES();
+       // DES des = new DES();
 
         // GET: api/Sale
         public List<Sale> Get()
@@ -28,8 +28,8 @@ namespace WebServices.Controllers
         {
             Sale sale = new Sale();
             
-            string jsonString = des.Decrypt(value.ToString());
-            sale = JsonConvert.DeserializeObject<Sale>(jsonString);
+           // string jsonString = des.Decrypt(value.ToString());
+            sale = JsonConvert.DeserializeObject<Sale>(value.ToString());
 
             return this.saleBusiness.Insert(sale);
         }

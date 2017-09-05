@@ -101,5 +101,20 @@
 
 </section>
 
+
+
+@{
+    Business.UserBusiness ui = new Business.UserBusiness();
+
+
+    for (int i = 0; i < users.GetUsers().ToArray().Length; i++)
+    {
+        String email = users.GetUsers().ToArray()[i].email.ToString();
+        String id = users.GetUsers().ToArray()[i]._id.ToString();
+
+        <option id="a" value=@id>@email</option>
+    }
+}
+
 @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
 @Scripts.Render("~/Scripts/main.js")
