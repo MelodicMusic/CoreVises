@@ -10,7 +10,8 @@ namespace Domain
 {
     public class User
     {
-        public string _id { get; set; }
+        [BsonId]
+        public ObjectId _id { get; set; }
         public string name { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }

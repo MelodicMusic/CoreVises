@@ -25,7 +25,17 @@ namespace WebServices.Controllers
             //string jsonString = des.Decrypt(value.ToString());
             user = JsonConvert.DeserializeObject<User>(value.ToString());
 
-            return this.userBusiness.SignUp(user);
+
+            if (!userBusiness.verifyEmail(user.email))
+            {
+                return this.userBusiness.SignUp(user);
+            }else
+            {
+                return null;
+            }
+
+
+            
         }
 
 
@@ -39,6 +49,8 @@ namespace WebServices.Controllers
             return this.userBusiness.LogIn(email, password);
 
         }
+
+        
 
 
         // PUT: api/User/value
