@@ -36,7 +36,7 @@ namespace Data
                 collection.ReplaceOne(filter, sale.ToBsonDocument());
                 return true;
             }
-            catch(MongoException)
+            catch (MongoException)
             {
                 return false;
             }
@@ -104,5 +104,66 @@ namespace Data
 
             return sales;
         }
+
+        public List<Sale> getSalesByClient(string userId)
+        {
+            List<Sale> sales = new List<Sale>();
+            var collection = database.GetCollection<BsonDocument>("sale");
+            var filter = Builders<BsonDocument>.Filter.Eq("userId", userId);
+            var result = collection.Find(filter).ToList();
+
+            if (result != null)
+            {
+                foreach (var document in result)
+                {
+                    Sale sale = new Sale();
+                    sale._id = document["_id"].ToString();
+                    sale.date = DateTime.Parse(document["date"].ToString());
+                    sale.userId = document["userId"].ToString();
+                    sale.productId = document["productId"].ToString();
+                    sale.detail = document["detail"].ToString();
+
+                    sales.Add(sale);
+                }
+
+                return sales;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        public List<Sale> getSalesByProduct(string productId)
+        {
+            List<Sale> sales = new List<Sale>();
+            var collection = database.GetCollection<BsonDocument>("sale");
+            var filter = Builders<BsonDocument>.Filter.Eq("productId", productId);
+            var result = collection.Find(filter).ToList();
+
+            if (result != null)
+            {
+                foreach (var document in result)
+                {
+                    Sale sale = new Sale();
+                    sale._id = document["_id"].ToString();
+                    sale.date = DateTime.Parse(document["date"].ToString());
+                    sale.userId = document["userId"].ToString();
+                    sale.productId = document["productId"].ToString();
+                    sale.detail = document["detail"].ToString();
+
+                    sales.Add(sale);
+                }
+
+                return sales;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
     }
 }
